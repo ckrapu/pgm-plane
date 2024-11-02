@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGM Plane</title>
+    <style>
+        :root {
+            --background-dark: #2A2B32;
+            --text-light: #ECECF1;
+            --input-background: #343541;
+            --accent-color: #AB68FF;
+            --secondary-text: #C5C5D2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .pro-plan {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .greeting {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 2.5rem;
+            color: var(--text-light);
+        }
+
+        .greeting .icon {
+            color: #E8A07A;
+            font-size: 2rem;
+        }
+
+        .input-container {
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: var(--input-background);
+            border: 1px solid #565869;
+            border-radius: 1rem;
+            padding: 1rem;
+            color: var(--text-light);
+            font-size: 1rem;
+            resize: none;
+            min-height: 100px;
+        }
+
+        .model-selector {
+            position: absolute;
+            left: 1rem;
+            bottom: -2rem;
+            background: transparent;
+            color: var(--secondary-text);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .recent-chats {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 3rem;
+        }
+
+        .recent-chats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-text);
+        }
+
+        .chat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .chat-card {
+            background-color: var(--input-background);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .chat-card:hover {
+            background-color: #424454;
+        }
+
+        .chat-card h3 {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-card p {
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PGM Plane</div>
+        <button class="pro-plan">Professional Plan</button>
+    </header>
+
+    <main>
+        <div class="greeting">
+            <span class="icon">✴</span>
+            <span>Good evening</span>
+        </div>
+
+        <div class="input-container">
+            <textarea class="input-field" placeholder="How can I help you today?"></textarea>
+            <button class="model-selector">
+                <span>Model: Claude 3.5 Sonnet (New)</span>
+                <span>▼</span>
+            </button>
+        </div>
+
+        <div class="recent-chats">
+            <div class="recent-chats-header">
+                <div>Your recent chats</div>
+                <div>View all →</div>
+            </div>
+            <div class="chat-grid">
+                <div class="chat-card">
+                    <h3>Project Planning Discussion</h3>
+                    <p>2 messages · 2 hours ago</p>
+                </div>
+                <div class="chat-card">
+                    <h3>Code Review Session</h3>
+                    <p>5 messages · 3 hours ago</p>
+                </div>
+                <div class="chat-card">
+                    <h3>Bug Analysis</h3>
+                    <p>3 messages · 4 hours ago</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

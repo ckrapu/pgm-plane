@@ -1,0 +1,209 @@
+{
+  "dims": [
+    {
+      "id": 1730586215839,
+      "label": "M",
+      "size": 12,
+      "description": "Months",
+      "position": {
+        "x": 551,
+        "y": 319,
+        "width": 406,
+        "height": 116
+      }
+    },
+    {
+      "id": 1730586288657,
+      "label": "C",
+      "size": 3000,
+      "description": "Counties",
+      "position": {
+        "x": 319,
+        "y": 145,
+        "width": 464,
+        "height": 348
+      }
+    },
+    {
+      "id": 1730586551173,
+      "label": "O",
+      "size": 3,
+      "description": "Per-county features",
+      "position": {
+        "x": 261,
+        "y": 29,
+        "width": 232,
+        "height": 406
+      }
+    }
+  ],
+  "variables": [
+    {
+      "id": 1730586082270,
+      "symbol": "\\alpha",
+      "description": "County random effect",
+      "support": "continuous",
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [
+        1730586687092
+      ],
+      "position": {
+        "x": 696,
+        "y": 174
+      }
+    },
+    {
+      "id": 1730586086456,
+      "symbol": "X",
+      "description": "County-level features",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": "observed",
+      "parents": [],
+      "position": {
+        "x": 406,
+        "y": 348
+      }
+    },
+    {
+      "id": 1730586087289,
+      "symbol": "y",
+      "description": "sales",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": "observed",
+      "parents": [
+        1730586082270,
+        1730586086456,
+        1730586450773,
+        1730586205706
+      ],
+      "position": {
+        "x": 696,
+        "y": 348
+      }
+    },
+    {
+      "id": 1730586205706,
+      "symbol": "\\beta",
+      "description": "Coefficients",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [
+        1730586718090
+      ],
+      "position": {
+        "x": 406,
+        "y": 58
+      }
+    },
+    {
+      "id": 1730586450773,
+      "symbol": "\\nu",
+      "description": "Monthly effect",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [
+        1730586661674
+      ],
+      "position": {
+        "x": 870,
+        "y": 348
+      }
+    },
+    {
+      "id": 1730586661674,
+      "symbol": "\\sigma_\\nu",
+      "description": "Scale (month effect)",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [],
+      "position": {
+        "x": 1044,
+        "y": 348
+      }
+    },
+    {
+      "id": 1730586687092,
+      "symbol": "\\sigma_\\alpha",
+      "description": "Scale (county)",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [],
+      "position": {
+        "x": 870,
+        "y": 174
+      }
+    },
+    {
+      "id": 1730586718090,
+      "symbol": "\\sigma_\\beta",
+      "description": "Coefficient scale",
+      "support": null,
+      "constraints": null,
+      "distribution": null,
+      "observation": null,
+      "parents": [],
+      "position": {
+        "x": 174,
+        "y": 58
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": 1730586082270,
+      "to": 1730586087289,
+      "fromPoint": "bottom",
+      "toPoint": "top"
+    },
+    {
+      "from": 1730586086456,
+      "to": 1730586087289,
+      "fromPoint": "right",
+      "toPoint": "left"
+    },
+    {
+      "from": 1730586450773,
+      "to": 1730586087289,
+      "fromPoint": "left",
+      "toPoint": "right"
+    },
+    {
+      "from": 1730586205706,
+      "to": 1730586087289,
+      "fromPoint": "right",
+      "toPoint": "top"
+    },
+    {
+      "from": 1730586661674,
+      "to": 1730586450773,
+      "fromPoint": "left",
+      "toPoint": "right"
+    },
+    {
+      "from": 1730586687092,
+      "to": 1730586082270,
+      "fromPoint": "left",
+      "toPoint": "right"
+    },
+    {
+      "from": 1730586718090,
+      "to": 1730586205706,
+      "fromPoint": "right",
+      "toPoint": "left"
+    }
+  ]
+}

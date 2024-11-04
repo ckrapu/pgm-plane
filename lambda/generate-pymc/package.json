@@ -1,0 +1,9 @@
+{
+  "name": "generate-pymc",
+  "version": "1.0.0",
+  "description": "Lambda function to generate PyMC code using Anthropic API",
+  "main": "index.js",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.18.0"
+  }
+}
